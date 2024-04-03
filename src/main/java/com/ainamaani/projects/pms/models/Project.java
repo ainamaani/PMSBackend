@@ -1,8 +1,8 @@
 package com.ainamaani.projects.pms.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.ainamaani.projects.pms.models.enums.ProjectPriorityLevel;
+import com.ainamaani.projects.pms.models.enums.ProjectStatus;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,9 +19,12 @@ public class Project extends BaseEntity{
     private String projectDescription;
     private Date startDate;
     private Date endDate;
-    private String status;
-    private String priority;
+    @Enumerated(EnumType.STRING)
+    private ProjectStatus status;
+    @Enumerated(EnumType.STRING)
+    private ProjectPriorityLevel priority;
     private String projectManager;
+    @ElementCollection
     private List<String> teamMembers;
     private String budgetAllocation;
     private String client;
