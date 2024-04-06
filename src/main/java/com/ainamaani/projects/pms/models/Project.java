@@ -30,9 +30,9 @@ public class Project extends BaseEntity{
     private Date endDate;
     @NotBlank(message = "Project status is required")
 
-    private ProjectStatus status;
+    private String status;
     @NotBlank(message = "Project priority is required")
-    private ProjectPriorityLevel priority;
+    private String priority;
     @NotBlank(message = "Project manager name is required")
     private String projectManager;
     @NotEmpty(message = "Project team members is required")
@@ -41,7 +41,6 @@ public class Project extends BaseEntity{
     private String budgetAllocation;
     @NotBlank(message = "Project client is required")
     private String client;
-    private File projectAttachments;
     @NotBlank(message = "Additional notes about the project are required")
     private String additionalNotes;
 
