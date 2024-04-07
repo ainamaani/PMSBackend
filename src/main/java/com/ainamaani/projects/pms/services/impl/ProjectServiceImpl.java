@@ -80,6 +80,7 @@ public class ProjectServiceImpl implements ProjectService {
 
             projectToChangeStatus.setStatus(newProject);
             return projectRepository.save(projectToChangeStatus);
+
         }else{
             throw new RuntimeException("Failed to find the project to change status");
         }

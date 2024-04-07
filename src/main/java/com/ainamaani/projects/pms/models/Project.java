@@ -29,7 +29,6 @@ public class Project extends BaseEntity{
     @NotNull(message = "Project end date is required")
     private Date endDate;
     @NotBlank(message = "Project status is required")
-
     private String status;
     @NotBlank(message = "Project priority is required")
     private String priority;

@@ -103,7 +103,9 @@ public class ProjectController {
     }
 
     @PostMapping("/project/{id}/changestatus")
-    public ResponseEntity<?> handleChangeProjectStatus(@PathVariable Long id, @RequestBody String newProjectStatus){
+    public ResponseEntity<?> handleChangeProjectStatus(@PathVariable Long id, @RequestBody Map<String, String> requestBody){
+        String newProjectStatus = requestBody.get("newProjectStatus");
+
         try{
             Project updatedStatusProject = projectService.changeProjectStatus(id, newProjectStatus);
             if(updatedStatusProject != null){
